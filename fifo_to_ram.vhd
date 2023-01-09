@@ -3,16 +3,16 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 -- Entity declaration for the FIFO-to-RAM converter
-entity FIFO_to_RAM_converter is
+entity FIFO_to_RAM is
     Port ( clk : in  STD_LOGIC;
            rst : in  STD_LOGIC;
            fifo_data_in : in  STD_LOGIC_VECTOR (7 downto 0);
            fifo_wr_en : in  STD_LOGIC;
            ram_data_out : out STD_LOGIC_VECTOR (47 downto 0));
-end FIFO_to_RAM_converter;
+end FIFO_to_RAM;
 
 -- Architecture for the FIFO-to-RAM converter
-architecture Behavioral of FIFO_to_RAM_converter is
+architecture Behavioral of FIFO_to_RAM is
 
 -- Declare a 48-bit shift register to hold the data
 signal shift_reg : STD_LOGIC_VECTOR (47 downto 0) := (others => '0');
